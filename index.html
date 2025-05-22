@@ -25,6 +25,7 @@
       background-color: var(--beige);
       color: var(--dark);
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -34,6 +35,9 @@
       align-items: center;
       padding: 1.5rem 3rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo {
@@ -66,21 +70,43 @@
     }
 
     .hero {
-      background: linear-gradient(to bottom right, #e8edf2, #ffffff);
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
       padding: 6rem 3rem;
       text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero h2,
+    .hero p,
+    .hero .btn {
+      position: relative;
+      z-index: 1;
     }
 
     .hero h2 {
       font-family: var(--font-primary);
       font-size: 3rem;
-      color: var(--navy);
+      color: white;
+      animation: fadeInDown 1s ease;
     }
 
     .hero p {
       font-size: 1.25rem;
       margin: 1rem 0 2rem;
-      color: #333;
+      color: #e0e0e0;
+      animation: fadeInUp 1.5s ease;
     }
 
     .btn {
@@ -101,6 +127,7 @@
       padding: 5rem 3rem;
       max-width: 1200px;
       margin: auto;
+      animation: fadeIn 1s ease;
     }
 
     .section h3 {
@@ -114,12 +141,36 @@
       margin-bottom: 1.5rem;
     }
 
+    .section img {
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
     footer {
       background-color: var(--navy);
       color: white;
       text-align: center;
       padding: 2rem;
       margin-top: 3rem;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
@@ -147,11 +198,13 @@
     <p><strong>Quick Tune-Ups:</strong> 1-on-1 summer readiness audits, pricing strategy, layout optimization.</p>
     <p><strong>Operations Help:</strong> Hiring plans, menu redesigns, POS systems, customer flow fixes.</p>
     <p><strong>Marketing Support:</strong> Flyers, social media help, promo deals, and more.</p>
+    <img src="https://images.unsplash.com/photo-1581093588401-9f37bfcdb52a?auto=format&fit=crop&w=1950&q=80" alt="Consulting teamwork" />
   </section>
 
   <section id="about" class="section">
     <h3>About Ocean Avenue</h3>
     <p>We’re a local consulting startup dedicated to helping Hamptons-based small businesses succeed when it matters most — during the summer rush. From pizzerias and beachside cafés to vintage shops and boat rentals, we bring personalized strategy and modern tools with a friendly approach.</p>
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80" alt="Beach consulting vibe" />
   </section>
 
   <section id="contact" class="section">
@@ -166,7 +219,6 @@
   </footer>
 
   <script>
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
