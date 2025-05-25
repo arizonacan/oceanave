@@ -60,6 +60,14 @@
       padding: 4rem 2rem;
       max-width: 960px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    main.visible {
+      opacity: 1;
+      transform: none;
     }
 
     h2 {
@@ -98,23 +106,35 @@
   <header>
     <div class="logo">
       <a href="index.html" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
-      <img src="logo.png" alt="Ocean Avenue Consulting Logo" />
-      <h1 style="color: var(--navy); font-family: var(--font-primary); font-size: 1.75rem;">Ocean Avenue Consulting</h1>
-    </a>
+        <img src="logo.png" alt="Ocean Avenue Consulting Logo" />
+        <h1 style="color: var(--navy); font-family: var(--font-primary); font-size: 1.75rem;">Ocean Avenue Consulting</h1>
+      </a>
     </div>
   </header>
 
-  <main>
+  <main id="aboutMain">
     <h2>About Us</h2>
     <img class="about-image" src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=1650&q=80" alt="Team at work">
     <p>Ocean Avenue Consulting is a seasonal strategy firm based in the Hamptons. We specialize in helping small, local businesses navigate the chaotic and opportunity-filled summer rush. Our mission is to equip these businesses with the same operational and marketing edge as bigger competitors, while preserving their unique identity and roots in the community.</p>
-    <p>We combine real-world experience with a deep understanding of hospitality, customer service, and community engagement. Our tailored, boots-on-the-ground approach helps local restaurants, retailers, and rental services meet seasonal demand with confidence and clarity.</p>
-    <p>We are proud to be a consulting firm grounded in cultural awareness, hands-on experience, and genuine care for the businesses we serve. Whether you need a quick tune-up or a full strategy overhaul, we’re here to help.</p>
+    <p>We combine real-world experience with a deep understanding of hospitality, customer service, blue-collar operations, and community engagement. Our tailored, boots-on-the-ground approach helps local restaurants, retailers, and small trade businesses meet seasonal demand with confidence and clarity.</p>
+    <p>We are proud to be a consulting firm grounded in cultural awareness, hands-on experience, and genuine care for the businesses we serve. In addition to operations and strategy, we also offer professional development support — helping businesses build a strong presence through tools like custom websites, business cards, and LinkedIn optimization.</p>
   </main>
 
   <footer>
     <p>&copy; 2025 Ocean Avenue Consulting. All rights reserved.</p>
   </footer>
+
+  <script>
+    const aboutMain = document.getElementById('aboutMain');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(aboutMain);
+  </script>
 </body>
 </html>
-
