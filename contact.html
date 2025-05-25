@@ -60,6 +60,14 @@
       padding: 4rem 2rem;
       max-width: 800px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    main.visible {
+      opacity: 1;
+      transform: none;
     }
 
     h2 {
@@ -127,13 +135,13 @@
   <header>
     <div class="logo">
       <a href="index.html" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
-      <img src="logo.png" alt="Ocean Avenue Consulting Logo" />
-      <h1 style="color: var(--navy); font-family: var(--font-primary); font-size: 1.75rem;">Ocean Avenue Consulting</h1>
-    </a>
+        <img src="logo.png" alt="Ocean Avenue Consulting Logo" />
+        <h1 style="color: var(--navy); font-family: var(--font-primary); font-size: 1.75rem;">Ocean Avenue Consulting</h1>
+      </a>
     </div>
   </header>
 
-  <main>
+  <main id="contactMain">
     <h2>Contact Us</h2>
     <form action="#" method="POST">
       <label for="name">Name</label>
@@ -158,6 +166,18 @@
   <footer>
     <p>&copy; 2025 Ocean Avenue Consulting. All rights reserved.</p>
   </footer>
+
+  <script>
+    const contactMain = document.getElementById('contactMain');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(contactMain);
+  </script>
 </body>
 </html>
-
