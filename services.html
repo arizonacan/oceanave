@@ -86,6 +86,14 @@
       max-width: 1000px;
       margin: auto;
       padding: 4rem 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    main.visible {
+      opacity: 1;
+      transform: none;
     }
 
     h3 {
@@ -129,7 +137,7 @@
     <h2>Our Services</h2>
   </section>
 
-  <main>
+  <main id="servicesMain">
     <div class="service-box">
       <h3>Quick Tune-Ups</h3>
       <p>We’ll sit down with you one-on-one and make sure your business is ready for the busy summer season. We help you set smart prices, arrange your space better, improve your signs, and make things run more smoothly.</p>
@@ -147,5 +155,18 @@
   <footer>
     <p>&copy; 2025 Ocean Avenue Consulting. All rights reserved.</p>
   </footer>
+
+  <script>
+    const servicesMain = document.getElementById('servicesMain');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(servicesMain);
+  </script>
 </body>
 </html>
