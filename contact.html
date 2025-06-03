@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact - Ocean Avenue Consulting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --navy: #163B5B;
@@ -25,19 +25,19 @@
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      background-color: #f9f8f6;
-      color: #1a1a1a;
+      font-family: var(--font-secondary);
+      background-color: var(--beige);
+      color: var(--dark);
     }
 
     header {
-      background-color: #f9f8f6;
+      background-color: var(--beige);
       padding: 1.5rem 3rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      position: relative;
     }
 
     .logo {
@@ -51,9 +51,73 @@
     }
 
     .logo h1 {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-primary);
       font-size: 1.5rem;
-      color: #163B5B;
+      color: var(--navy);
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--navy);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background-color: var(--dark);
+      transition: all 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background-color: var(--beige);
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      text-align: right;
+      padding: 1rem 3rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .mobile-nav a {
+      margin: 1rem 0;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--dark);
+    }
+
+    .mobile-nav a:hover {
+      color: var(--navy);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
     }
 
     main {
@@ -71,9 +135,9 @@
     }
 
     h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-primary);
       font-size: 2.5rem;
-      color: #163B5B;
+      color: var(--navy);
       margin-bottom: 2rem;
       text-align: center;
     }
@@ -98,12 +162,12 @@
       border-radius: 6px;
       border: 1px solid #ccc;
       font-size: 1rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: var(--font-secondary);
     }
 
     button {
       margin-top: 1.5rem;
-      background-color: #163B5B;
+      background-color: var(--navy);
       color: white;
       border: none;
       padding: 0.75rem 2rem;
@@ -123,7 +187,7 @@
     }
 
     footer {
-      background-color: #163B5B;
+      background-color: var(--navy);
       color: white;
       text-align: center;
       padding: 2rem;
@@ -198,6 +262,13 @@
     }, { threshold: 0.1 });
 
     observer.observe(contactMain);
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
