@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services - Ocean Avenue Consulting</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -25,14 +25,14 @@
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #f9f8f6;
-      color: #1a1a1a;
+      font-family: var(--font-secondary);
+      background-color: var(--beige);
+      color: var(--dark);
       margin: 0;
     }
 
     header {
-      background-color: #f9f8f6;
+      background-color: var(--beige);
       padding: 1.5rem 3rem;
       display: flex;
       align-items: center;
@@ -51,13 +51,13 @@
     }
 
     .logo h1 {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-primary);
       font-size: 1.5rem;
-      color: #163B5B;
+      color: var(--navy);
     }
 
     .hero {
-      background: url('https://images.unsplash.com/photo-1603988363607-439aaf67b9c3?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
       color: white;
       padding: 6rem 2rem;
       text-align: center;
@@ -75,7 +75,7 @@
     }
 
     .hero h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-primary);
       font-size: 3rem;
       margin: 0;
       position: relative;
@@ -97,8 +97,8 @@
     }
 
     h3 {
-      font-family: 'Playfair Display', serif;
-      color: #163B5B;
+      font-family: var(--font-primary);
+      color: var(--navy);
       font-size: 2rem;
       margin-bottom: 1rem;
     }
@@ -116,7 +116,7 @@
     }
 
     footer {
-      background-color: #163B5B;
+      background-color: var(--navy);
       color: white;
       text-align: center;
       padding: 2rem;
@@ -126,29 +126,29 @@
 <body>
   <header>
     <div class="logo">
-       <a href="index.html" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
-      <img src="logo.png" alt="Ocean Avenue Consulting Logo" />
-      <h1>Ocean Avenue Consulting</h1>
-    </a>
+      <a href="index.html" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
+        <img src="logo.png" alt="Ocean Avenue Consulting Logo" />
+        <h1>Ocean Avenue Consulting</h1>
+      </a>
     </div>
   </header>
 
-  <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center; position: relative;">
+  <section class="hero">
     <h2>Our Services</h2>
   </section>
 
   <main id="servicesMain">
     <div class="service-box">
       <h3>Quick Tune-Ups</h3>
-      <p>We’ll sit down with you one-on-one and make sure your business is ready for the busy summer season. We help you set smart prices, arrange your space better, improve your signs, and make things run more smoothly.</p>
+      <p>We provide focused, one-on-one consultations to prepare your business for high-traffic periods. Our work includes refining pricing strategies, optimizing spatial layout for efficiency, upgrading signage for visibility, and streamlining daily operations — ensuring your business runs smoothly and effectively.</p>
     </div>
     <div class="service-box">
       <h3>Operations Support</h3>
       <p>We help with temporary staffing, menu and POS redesign, and customer experience improvements that match your foot traffic and space limitations.</p>
     </div>
     <div class="service-box">
-      <h3>Brand Presence & Professional Tools</h3>
-      <p>We provide the tools and guidance you need to build a strong, professional identity. This includes setting up or refining your LinkedIn profile, designing business cards, and creating clean, modern websites using custom code — all to help your business look sharp and stand out.</p>
+      <h3>Professional Development & Brand Presence</h3>
+      <p>We provide focused support to help business owners develop a strong professional identity. This includes setting up or refining your LinkedIn profile, designing standout business cards, and creating clean, modern websites using custom code — all built to elevate your presence and credibility.</p>
     </div>
   </main>
 
