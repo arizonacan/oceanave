@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+/* --- CUSTOM ANIMATIONS --- */
+
+/* 1. Fade Up Animation */
+@keyframes fadeUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0; /* Start invisible */
+}
+
+/* 2. Shine Animation (For the Cyan text) */
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+.animate-shine {
+  animation: shine 4s linear infinite;
+}
+
+/* 3. Stagger Delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+/* 4. Custom Text Selection (The "Owner's Mark") */
+::selection {
+  background-color: #22d3ee; /* Cyan-400 */
+  color: #000000;
+}
