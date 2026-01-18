@@ -56,7 +56,7 @@ export default function About() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-cyan-400 font-bold">✱</span>
-                    <span>I live 5 minutes away. I'm not a 1-800 number.</span>
+                    <span>I'm not a 1-800 number. I'm your neighbor.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-cyan-400 font-bold">✱</span>
