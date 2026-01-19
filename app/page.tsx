@@ -33,7 +33,7 @@ export default function Home() {
       </nav>
 
       {/* HERO SECTION */}
-      <main className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-32">
+      <main className="relative z-10 max-w-7xl mx-auto px-6 pt-12 pb-32">
         <h1 className="text-6xl md:text-8xl font-serif font-extrabold tracking-tight mb-8 leading-tight text-white animate-fade-up">
           Your Business. <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-blue-400 to-cyan-200 bg-[length:200%_auto] animate-shine">
