@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image'; // IMPORT THIS
+import Image from 'next/image'; 
+import Navbar from './components/navbar';
 
 export default function Home() {
   return (
@@ -20,17 +21,7 @@ export default function Home() {
       </div>
 
       {/* NAVIGATION */}
-      <nav className="relative z-10 flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-        <div className="flex items-center gap-3">
-          <img src="/logo.png" alt="Ocean Avenue Logo" className="h-16 w-auto" />
-          <span className="text-xl font-serif font-bold tracking-tighter text-white">
-            OCEAN AVENUE
-          </span>
-        </div>
-        <a href="mailto:adriansantamaria@oceanaveconsulting.com" className="bg-white text-slate-900 px-5 py-2 rounded-full font-medium text-sm hover:bg-slate-200 transition">
-          Book Audit
-        </a>
-      </nav>
+      <Navbar />
 
       {/* HERO SECTION */}
       <main className="relative z-10 max-w-7xl mx-auto px-6 pt-12 pb-32">

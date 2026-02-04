@@ -1,32 +1,15 @@
 import React from 'react';
-import Link from 'next/link';
+import Image from 'next/image'; // Import the optimizer
+import Navbar from '../components/navbar'; 
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-black text-white font-sans">
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-black text-white font-sans selection:bg-cyan-500 selection:text-black">
       
-      {/* NAVIGATION */}
-      <nav className="flex justify-between items-center px-6 py-8 max-w-7xl mx-auto">
-        <Link href="/" className="flex items-center gap-3 group">
-          <img src="/logo.png" alt="Ocean Avenue Logo" className="h-14 w-auto" />
-          {/* LOGO: Bodoni Moda (Serif) - The Luxury Look */}
-          <span className="text-xl md:text-2xl font-serif font-bold tracking-tighter text-white group-hover:text-cyan-400 transition-colors">
-            OCEAN AVENUE
-          </span>
-        </Link>
-        
-        {/* BUTTON: Inter (Sans) - The Clean UI Look */}
-        <Link 
-          href="/" 
-          className="bg-white text-slate-950 font-sans px-5 py-2 rounded-full font-medium text-sm hover:bg-slate-200 transition shadow-[0_0_15px_rgba(255,255,255,0.1)]"
-        >
-          Back Home
-        </Link>
-      </nav>
+      {/* 1. THE SHARED NAVBAR (Passing custom props for this page) */}
+      <Navbar ctaText="Back Home" ctaLink="/" />
 
       <main className="max-w-7xl mx-auto px-6 py-12 md:py-20">
-        
-        {/* THE SPLIT LAYOUT */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
           
           {/* LEFT SIDE: Copy */}
@@ -67,20 +50,23 @@ export default function About() {
             </div>
           </div>
 
-          {/* RIGHT SIDE: The Photo */}
+          {/* RIGHT SIDE: The Photo (FIXED with Next/Image) */}
           <div className="order-1 md:order-2 relative animate-fade-up delay-200">
             {/* Cyan Glow */}
             <div className="absolute inset-0 bg-cyan-500 blur-[80px] opacity-20 rounded-full"></div>
             
-            {/* Image Container (Correct Aspect Ratio: 4/3) */}
             <div className="relative aspect-[4/3] w-full max-w-md mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-800 group">
-              <img 
+              {/* 2. THE OPTIMIZED IMAGE TAG */}
+              <Image 
                 src="/adrian.jpg" 
                 alt="Adrian Santamaria" 
-                className="object-cover w-full h-full opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0" 
+                fill
+                className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority // Loads fast because it's above the fold
               />
               
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent z-10">
                 <p className="text-white font-serif font-bold text-lg">Adrian Santamaria</p>
                 <p className="text-cyan-400 text-sm tracking-widest uppercase font-sans">Founder & Lead Engineer</p>
               </div>
