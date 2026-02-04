@@ -11,12 +11,13 @@ export default function Navbar({ ctaText = "Book Audit", ctaLink = "mailto:adria
     <nav className="relative z-50 flex justify-between items-center px-6 py-6 max-w-7xl mx-auto w-full">
       
       {/* LEFT: Logo Group */}
-      <Link href="/" className="flex items-center gap-2 group">
-        {/* Using standard img for logo is fine if it's small, but consistency is key */}
-        <div className="relative h-10 w-auto -mt-1.5"> 
-           <img src="/logo.png" alt="Ocean Avenue" className="h-14 w-auto object-contain" />
+      <Link href="/" className="flex items-center gap-3 group">
+        
+        <div className="relative h-16 w-auto -mt-3"> 
+           <img src="/logo.png" alt="Ocean Avenue" className="h-full w-auto object-contain" />
         </div>
-        <span className="text-xl md:text-2xl font-serif font-bold tracking-tighter text-white group-hover:text-cyan-400 transition-colors">
+        
+        <span className="text-xl md:text-2xl font-serif font-bold tracking-widest leading-none pt-1 text-white group-hover:text-cyan-400 transition-colors">
           OCEAN AVENUE
         </span>
       </Link>
