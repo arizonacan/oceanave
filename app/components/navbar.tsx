@@ -13,7 +13,7 @@ export default function Navbar({ ctaText = "Book Audit", ctaLink = "mailto:adria
       {/* LEFT: Logo Group */}
       <Link href="/" className="flex items-center gap-2 group">
         {/* Using standard img for logo is fine if it's small, but consistency is key */}
-        <div className="relative h-12 w-auto"> 
+        <div className="relative h-10 w-auto -mt-1.5"> 
            <img src="/logo.png" alt="Ocean Avenue" className="h-14 w-auto object-contain" />
         </div>
         <span className="text-xl md:text-2xl font-serif font-bold tracking-tighter text-white group-hover:text-cyan-400 transition-colors">
