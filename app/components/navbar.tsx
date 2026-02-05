@@ -24,7 +24,7 @@ export default function Navbar({ ctaText = "Book Audit", ctaLink = "mailto:adria
             leading-none: Kills invisible line-height so it centers perfectly.
             tracking-widest: Adds luxury spacing.
         */}
-        <span className="text-xl md:text-2xl font-serif font-bold tracking-widest leading-none text-white group-hover:text-cyan-400 transition-colors">
+        <span className="text-xl md:text-2xl font-serif font-bold tracking-wide leading-none text-white group-hover:text-cyan-400 transition-colors">
           OCEAN AVENUE
         </span>
       </Link>
