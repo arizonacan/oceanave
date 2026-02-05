@@ -11,13 +11,13 @@ export default function Home() {
       {/* THE OPTIMIZED BACKGROUND */}
       <div className="fixed inset-0 -z-10">
         <Image 
-          src="/oceanwater.jpeg" 
-          alt="Ocean Avenue Background" 
-          fill 
-          priority 
-          className="object-cover brightness-50" // brightness-50 darkens it so text pops
-          quality={80}
-        />
+        src="/oceanwater.jpeg" 
+        alt="Background" 
+        fill 
+        priority  
+        className="object-cover brightness-50"
+        sizes="100vw" 
+          />
       </div>
 
       {/* NAVIGATION */}
