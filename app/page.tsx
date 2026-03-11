@@ -28,7 +28,7 @@ export default function Home() {
         <h1 className="text-6xl md:text-8xl font-serif font-extrabold tracking-tight mb-8 leading-tight text-white animate-fade-up">
           Your Business. <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-blue-400 to-cyan-200 bg-[length:200%_auto] animate-shine">
-          On The Main Stage.
+          Our Passion.
           </span>
         </h1>
         
