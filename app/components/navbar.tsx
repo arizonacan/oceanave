@@ -6,7 +6,7 @@ interface NavbarProps {
   ctaLink?: string;
 }
 
-export default function Navbar({ ctaText = "Book Audit", ctaLink = "mailto:adriansantamaria@oceanaveconsulting.com" }: NavbarProps) {
+export default function Navbar({ ctaText = "Book Audit", ctaLink = "mailto:hello@oceanaveconsulting.com" }: NavbarProps) {
   return (
     <nav className="relative z-50 flex justify-between items-center px-6 py-6 max-w-7xl mx-auto w-full">
       
@@ -42,7 +42,7 @@ export default function Navbar({ ctaText = "Book Audit", ctaLink = "mailto:adria
           
           {/* Mobile Text Link */}
           <Link href={ctaLink} className="md:hidden text-sm font-bold text-cyan-400 uppercase tracking-widest">
-            Book
+            Book Audit
           </Link>
       </div>
 
