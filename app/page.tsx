@@ -47,7 +47,7 @@ export default function Home() {
             Book Your Strategy Call
           </a>
           <Link href="/about" className="px-8 py-4 rounded-lg font-bold text-lg border border-white hover:bg-white hover:text-black transition text-center text-white">
-            Meet The Founder
+            Meet The Founders
           </Link>
         </div>
       </main>
